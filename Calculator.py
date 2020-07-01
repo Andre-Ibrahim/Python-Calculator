@@ -114,7 +114,7 @@ def compute(statement):
 
     for i, e in enumerate(statement):
         if statement[i] == "(":
-            parenIndex.push(i)
+            parenIndex.append(i)
         if statement[i] == ")":
             z = parenIndex.pop()
             subCalculation = claculate(statement[z + 1 : i])
@@ -123,5 +123,4 @@ def compute(statement):
     return compute(statement)            
 
 
-x = claculate("3 + 3 * 6 ^ 2")
-print(x)
+print(compute("2 + 4 * (2 - 1)"))
